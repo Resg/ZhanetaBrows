@@ -1,0 +1,29 @@
+@use '@/styles/theme';
+
+.button {
+  font-family:
+    Montserrat,
+    Montserrat Fallback;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.primary {
+  background: theme.$primary-color;
+}
+.secondary {
+  background: theme.$secondary-dark-color;
+  color: white;
+}
+
+.text {
+  background: none;
+  border: none;
+}
+
+.disabled {
+  opacity: 0.7;
+}

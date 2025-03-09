@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: 'avatars.yandex.net',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/**',
+      },
     ],
   },
 };

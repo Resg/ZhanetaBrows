@@ -1,0 +1,17 @@
+@use 'media';
+
+@mixin page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 64px;
+}
+
+@mixin blockContainer {
+  max-width: media.$desktop-container-width;
+}
+
+@mixin flex($display: row) {
+  display: flex;
+  flex-direction: $display;
+}

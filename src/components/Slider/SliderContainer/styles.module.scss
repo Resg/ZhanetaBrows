@@ -1,0 +1,36 @@
+@use '@/styles/theme';
+@use '@/styles/containers';
+
+.container {
+  position: relative;
+  padding: 0 36px;
+}
+.swiper {
+  padding-bottom: 28px;
+}
+:global(.swiper-pagination) {
+  bottom: 0 !important;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% - 18px));
+}
+
+.buttonLeft {
+  left: 0;
+}
+
+.buttonRight {
+  right: 0;
+}
+
+.bullet {
+  background-color: theme.$secondary-color;
+  opacity: 1;
+}
+
+.bulletActive {
+  background-color: theme.$secondary-dark-color;
+}

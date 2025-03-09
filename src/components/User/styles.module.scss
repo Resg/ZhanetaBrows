@@ -1,14 +1,26 @@
+@use '@/styles/theme';
+
 .user {
   display: flex;
-  gap: 16px;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 16px 0;
+  flex-direction: column;
+  height: 112px;
 }
 
 .username {
-
+  font-size: 24px;
 }
 
 .avatar {
   border-radius: 100px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.popoverContent {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0);
 }

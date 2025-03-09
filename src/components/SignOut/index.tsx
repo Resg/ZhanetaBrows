@@ -1,8 +1,16 @@
 'use client';
 
 import { signOut } from 'next-auth/react';
-import React from 'react';
+import React, { useCallback } from 'react';
+
+import { Button } from '@/components/Button';
 
 export const SignOut: React.FC = () => {
-  return <button onClick={() => signOut()}>sign out</button>;
+  const handleClick = useCallback(() => signOut(), []);
+
+  return (
+    <Button onClick={handleClick} variant="text">
+      Выйти
+    </Button>
+  );
 };

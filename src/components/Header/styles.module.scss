@@ -1,6 +1,40 @@
+@use '@/styles/theme';
+
 .header {
+  position: absolute;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  background: theme.$primary-color;
+  top: 0;
+  left: 0;
+  right: 0;
   box-shadow: 0 7px 7px -2px rgba(34, 60, 80, 0.2);
+  justify-content: space-between;
+  height: 112px;
+}
+
+.logoContainer {
+  display: flex;
+  padding: 16px 0 16px 16px;
+  align-items: center;
+  gap: 16px;
+  font-size: 40px;
+}
+
+.rightBlock {
+  display: flex;
+  gap: 32px;
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.userContainer {
+  height: 100%;
+  padding-right: 24px;
+  align-items: center;
+  display: flex;
 }

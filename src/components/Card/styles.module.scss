@@ -1,6 +1,9 @@
+@use '@/styles/theme';
 .card {
   display: flex;
   flex-direction: column;
   padding: 12px;
   box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  background-color: theme.$white-color;
+  border-radius: 5px;
 }

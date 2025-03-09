@@ -1,0 +1,14 @@
+@use '@/styles/theme';
+
+.button {
+  border: 1px solid theme.$medium-grey;
+  border-radius: 100px;
+  overflow: hidden;
+  padding: 4px;
+  height: 34px;
+  width: 34px;
+}
+
+.icon {
+  fill: theme.$medium-grey;
+}

@@ -1,0 +1,19 @@
+@use '@/styles/theme';
+@use '@/styles/containers';
+.footer {
+  padding: 64px;
+  background: theme.$secondary-dark-color;
+  color: theme.$base-color;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.content {
+  @include containers.flex(column);
+}
+
+.contacts {
+  @include containers.flex();
+}

@@ -1,0 +1,19 @@
+@use '@/styles/containers';
+
+.container {
+  @include containers.blockContainer;
+  @include containers.flex(column);
+
+  align-items: center;
+}
+
+.content {
+  @include containers.flex();
+  gap: 128px;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}

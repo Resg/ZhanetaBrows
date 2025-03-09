@@ -1,0 +1,29 @@
+@use '@/styles/containers';
+@use '@/styles/theme';
+.container {
+  @include containers.blockContainer();
+  @include containers.flex();
+  margin-top: 64px;
+  gap: 128px;
+}
+
+.title {
+  color: theme.$secondary-dark-color;
+}
+
+.text {
+  color: theme.$secondary-dark-color;
+}
+
+.textContainer {
+  @include containers.flex(column);
+  gap: 24px;
+}
+
+.imageContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}

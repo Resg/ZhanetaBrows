@@ -1,0 +1,19 @@
+.card {
+  padding: 0 !important;
+  overflow: hidden;
+  width: 250px;
+  margin: auto;
+}
+
+.image {
+  position: relative;
+  height: 300px;
+  width: 250px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+}

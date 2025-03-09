@@ -1,5 +1,4 @@
 import { FlatCompat } from '@eslint/eslintrc';
-import importPlugin from 'eslint-plugin-simple-import-sort';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -28,8 +27,4 @@ const eslintConfig = [
   }),
 ];
 
-eslintConfig.forEach((config) => {
-  console.log(config);
-});
-console.log(importPlugin);
 export default eslintConfig;

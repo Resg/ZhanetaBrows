@@ -1,0 +1,22 @@
+@use '@/styles/containers';
+
+.page {
+  @include containers.page;
+}
+
+.about {
+  margin-top: 64px;
+}
+
+.price {
+  margin-top: 64px;
+}
+
+.promo {
+  margin-top: 64px;
+}
+
+.gallery {
+  margin-top: 64px;
+  margin-bottom: 64px;
+}

@@ -1,0 +1,23 @@
+@use '@/styles/containers';
+.container {
+  @include containers.flex(column);
+  align-items: center;
+}
+
+.title {
+}
+
+.content {
+  margin-top: 32px;
+  @include containers.flex(row);
+  gap: 128px;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.text {
+}

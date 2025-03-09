@@ -6,11 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "prepare": "husky install"
+    "lint": "next lint --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "@auth/pg-adapter": "^1.8.0",
+    "@floating-ui/react": "^0.27.5",
     "classnames": "^2.5.1",
     "next": "15.2.0",
     "next-auth": "^5.0.0-beta.25",
@@ -18,7 +19,8 @@
     "pg": "^8.13.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.85.1"
+    "sass": "^1.85.1",
+    "swiper": "^11.2.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -44,9 +46,8 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "prettier --write",
-      "eslint --max-warnings 0 ."
+      "yarn lint --max-warnings 0 ."
     ],
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{css,md}": "prettier --write"
   }
 }
