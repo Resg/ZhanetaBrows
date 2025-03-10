@@ -3,25 +3,58 @@ name: CI
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+#  pull_request:
+#    branches: [ "master" ]
 
 jobs:
 
   build:
-
+    name: build
     runs-on: ubuntu-latest
-
+    environment: CI/CD
+    env:
+      AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+      SMS_API_KEY: ${{ secrets.SMS_API_KEY }}
+      SMS_SERVICE_URI: ${{ secrets.SMS_SERVICE_URI }}
+      AUTH_YANDEX_ID: ${{ secrets.AUTH_YANDEX_ID }}
+      AUTH_YANDEX_SECRET: ${{ secrets.AUTH_YANDEX_SECRET }}
+      DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+      DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+      DATABASE_USER: ${{ secrets.DATABASE_USER }}
+      DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+      AUTH_GOOGLE_ID: ${{ secrets.AUTH_GOOGLE_ID }}
+      AUTH_GOOGLE_SECRET: ${{ secrets.AUTH_GOOGLE_SECRET }}
+      EMAIL_SERVER: ${{ secrets.EMAIL_SERVER }}
+      EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
     steps:
     - uses: docker/login-action@v3
       name: Login to Docker Hub
       with:
         username: ${{ vars.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-        
+
     - uses: docker/build-push-action@v6.15.0
       name: Build and push Docker image
       with:
         push: true
         tags: resg/salon:latest
-  
+        build-args: ${{ secrets.ENVS }}
+
+  deploy:
+    needs: build
+    environment: CI/CD
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@v1.2.2
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          docker container rm -f salon
+          docker pull resg/salon:latest
+          docker run -p 3000:3000 -d --name=salon resg/salon:latest
+
+
+

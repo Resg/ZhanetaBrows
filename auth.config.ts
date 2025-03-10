@@ -19,6 +19,7 @@ export const authConfig = {
       return baseUrl;
     },
   },
+  redirectProxyUrl: process.env.AUTH_URL + '/auth/signin',
   providers: [
     Yandex,
     Google,

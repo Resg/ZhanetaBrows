@@ -7,9 +7,9 @@
 }
 .swiper {
   padding-bottom: 28px;
-}
-:global(.swiper-pagination) {
-  bottom: 0 !important;
+  :global(.swiper-pagination) {
+    bottom: 0 !important;
+  }
 }
 
 .button {
