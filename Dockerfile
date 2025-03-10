@@ -15,6 +15,7 @@ ARG AUTH_GOOGLE_ID
 ARG AUTH_GOOGLE_SECRET
 ARG EMAIL_SERVER
 ARG EMAIL_FROM
+ARG AUTH_URL
 
 RUN touch ./.env.local
 RUN echo "SMS_API_KEY=$SMS_API_KEY" >> .env.local
@@ -30,6 +31,7 @@ RUN echo "AUTH_GOOGLE_SECRET=$AUTH_GOOGLE_SECRET" >> .env.local
 RUN echo "EMAIL_SERVER=$EMAIL_SERVER" >> .env.local
 RUN echo "EMAIL_FROM=$EMAIL_FROM" >> .env.local
 RUN echo "AUTH_SECRET=$AUTH_SECRET" >> .env.local
+RUN echo "AUTH_URL=$AUTH_URL" >> .env.local
 RUN echo "AUTH_TRUST_HOST=true" >> .env.local
 
 RUN yarn
